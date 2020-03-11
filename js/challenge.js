@@ -11,14 +11,13 @@ function increment(){
   let minus = document.getElementById('minus')
   let plus = document.getElementById('plus')
   let counterInt = parseInt(counter.innerText)
-  if (!isPaused) {
-    minus.addEventListener('click', function(e){
-      counter.innerText = counterInt -= 1
-    })
-    plus.addEventListener('click', function(e){
-      counter.innerText = counterInt += 1
-    })
-  }
+  minus.addEventListener('click', function(e){
+    counter.innerText = counterInt -= 1
+  })
+  plus.addEventListener('click', function(e){
+    counter.innerText = counterInt += 1
+  })
+  
 }
 
 function count() {
@@ -34,13 +33,19 @@ function increase() {
 }
 
 function pause() {
+  let minus = document.getElementById('minus')
+  let plus = document.getElementById('plus')
   let pauseButton = document.getElementById('pause')
   pauseButton.addEventListener('click', function() {
     if (isPaused === false) {
       isPaused = true
+      minus.disabled = true
+      plus.disabled = true
       pauseButton.innerText = 'resume'
     }
     else {
+      minus.disabled = false
+      plus.disabled = false
       isPaused = false
       pauseButton.innerText = 'pause'
     }
