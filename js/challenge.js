@@ -7,11 +7,12 @@ function increment(){
   let counter = document.getElementById('counter')
   let minus = document.getElementById('minus')
   let plus = document.getElementById('plus')
+  let counterInt = parseInt(counter.innerText)
   minus.addEventListener('click', function(e){
-    counter.innerHTML -= 1
+    counter.innerText = counterInt -= 1
   })
   plus.addEventListener('click', function(e){
-    counter.innerHTML += 1
+    counter.innerText = counterInt += 1
   })
 }
 
@@ -21,6 +22,6 @@ function count() {
 
 function increase() {
   let counter = document.getElementById('counter')
-  //let newCount = parseInt(counter.innerText) ++
-  //console.log(newCount)
+  let counterInt = parseInt(counter.innerText)
+  counter.innerText = counterInt += 1
 }
