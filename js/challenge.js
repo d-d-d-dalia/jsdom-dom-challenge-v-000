@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
   increment()
   count()
   pause()
+  like()
 })
 
 let isPaused = false
@@ -49,5 +50,15 @@ function pause() {
       isPaused = false
       pauseButton.innerText = 'pause'
     }
+  })
+}
+
+function like() {
+  let heart = document.getElementById('heart')
+  let ul = document.getElementsByClassName('likes')
+  heart.addEventListener('click', function() {
+    let li = document.createElement('li')
+    li.appendChild(document.createTextNode("1 like!"));
+    ul.appendChild(li)
   })
 }
