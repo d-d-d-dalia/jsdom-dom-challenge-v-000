@@ -54,11 +54,12 @@ function pause() {
 }
 
 function like() {
+  let counter = document.getElementById('counter')
   let heart = document.getElementById('heart')
-  let ul = document.getElementsByClassName('likes')
+  let ul = document.getElementById('likes')
   heart.addEventListener('click', function() {
     let li = document.createElement('li')
-    li.appendChild(document.createTextNode("1 like!"));
+    li.innerText = `${counter.innerText} has 1 like`
     ul.appendChild(li)
   })
 }
